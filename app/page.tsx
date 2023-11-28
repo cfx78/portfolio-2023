@@ -1,5 +1,7 @@
+'use client';
 import Navbar from '@/app/components/Navbar';
 import { Ubuntu } from 'next/font/google';
+import { motion } from 'framer-motion';
 
 const ubuntu = Ubuntu({
 	subsets: ['latin'],
@@ -8,16 +10,73 @@ const ubuntu = Ubuntu({
 
 export default function Home() {
 	return (
-		<main className='flex min-h-screen bg-primary py-16 '>
+		<main className='flex    '>
 			<Navbar />
-			<section className='h-[90vh] pt-96 pl-4 bottom-0 left-0 w-full text-start flex flex-col items-baseline justify-start -space-y-96'>
+			<section className=' px-12 flex flex-col justify-center py -space-y-80'>
 				<h1
-					className={`${ubuntu.className} text-[16rem] prose-2xl font-outline-2-w `}>
-					FrontEnd
+					className={`${ubuntu.className}  -space-y-96 text-[27rem] prose-2xl pr-[75rem] self-center flex flex-col text-secondary `}>
+					<motion.span
+						initial={{
+							opacity: 0,
+							y: -300,
+						}}
+						animate={{
+							opacity: 1,
+							y: 0,
+						}}
+						transition={{
+							duration: 1,
+							delay: 1,
+						}}
+						className='end'>
+						E
+					</motion.span>
 				</h1>
 				<h1
-					className={`${ubuntu.className} text-[16rem] prose-2xl -rotate-6 text-neutral stroke-accent font-outline-4 pt-20 `}>
-					Developer
+					className={`${ubuntu.className} -space-x-3 text-[27rem] prose-2xl pl-5  tracking-tighter `}>
+					<span>F</span>
+					<span>R</span>
+					<span>O</span>
+					<motion.span
+						initial={{
+							opacity: 0,
+						}}
+						animate={{
+							opacity: 1,
+						}}
+						transition={{
+							duration: 1,
+							delay: 1.25,
+						}}
+						className='text-secondary end'>
+						N
+					</motion.span>
+					<span>T</span>
+				</h1>
+				<h1
+					className={`${ubuntu.className} -space-x-3 text-[27rem] prose-2xl pl-[50rem] tracking-tighter`}>
+					<motion.span
+						initial={{
+							opacity: 0,
+						}}
+						animate={{
+							opacity: 1,
+						}}
+						transition={{
+							duration: 1,
+							delay: 1.5,
+						}}
+						className='text-secondary end'>
+						D
+					</motion.span>
+					<span>E</span>
+					<span>V</span>
+					<span>E</span>
+					<span>L</span>
+					<span>O</span>
+					<span>P</span>
+					<span>E</span>
+					<span>R</span>
 				</h1>
 			</section>
 		</main>

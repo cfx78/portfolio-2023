@@ -1,6 +1,7 @@
 'use client';
 import { Open_Sans } from 'next/font/google';
 import { useEffect, useState } from 'react';
+import { GrCode } from 'react-icons/gr';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -23,35 +24,37 @@ const Navbar = () => {
 	}, [theme]);
 	return (
 		<nav
-			className={`fixed top-0 left-0 h-[10vh] flex flex-row w-full   justify-between px-12 text-foreground text-2xl ${openSans.className} `}>
+			className={`fixed top-0 left-0 bg-primary px-12 flex flex-row w-full items-center prose-2xl  justify-between z-10  ${openSans.className} `}>
 			<a href='#'>
-				<h1 className='pt-10 self-end prose-2xl'>Cortez Foxx</h1>
+				<h4 className='flex flex-row justify-evenly items-center gap-4  '>
+					<GrCode /> Cortez Foxx
+				</h4>
 			</a>
-			<div className='flex flex-row gap-4 self-start pt-2	'>
+			<div className='flex flex-row gap-10  '>
 				<a
 					href='#'
-					className='underline decoration-accent active:decoration-neutral active:text-accent prose-lg'>
-					About
+					className='underline  active:decoration-neutral  active:text-accent hover:text-secondary'>
+					<h4>About</h4>
 				</a>
 				<a
 					href='#'
-					className='underline decoration-accent active:decoration-neutral active:text-accent prose-lg '>
-					Projects
+					className='underline  active:decoration-neutral active:text-accent hover:text-secondary  '>
+					<h4>Skills</h4>
 				</a>
 				<a
 					href='#'
-					className='underline decoration-accent active:decoration-neutral active:text-accent prose-lg'>
-					Contact
+					className='underline  active:decoration-neutral active:text-accent hover:text-secondary'>
+					<h4>Projects</h4>
 				</a>
 				<a
 					href='#'
-					className='underline decoration-accent active:decoration-neutral active:text-accent prose-lg '>
-					Resume
+					className='underline  active:decoration-neutral active:text-accent hover:text-secondary  '>
+					<h4>Contact</h4>
 				</a>
 			</div>
 			<button
 				data-toggle-theme='light, dark'
-				className='btn btn-square btn-ghost '>
+				className='btn btn-sm btn-square btn-ghost '>
 				<label className='swap swap-rotate'>
 					{/* this hidden checkbox controls the state */}
 					<input

@@ -10,13 +10,13 @@ const config: Config = {
 		themes: [
 			{
 				dark: {
-					primary: '#011627',
+					primary: '#232323',
 
-					foreground: '#41ead4',
+					secondary: '#F45D48',
 
-					accent: '#f71735',
+					accent: '#2E5EAA',
 
-					neutral: '#fdfffc',
+					neutral: '#F8F5F2',
 
 					info: '#2272FF',
 
@@ -27,13 +27,13 @@ const config: Config = {
 					error: '#CC2936',
 				},
 				light: {
-					primary: '#fdfffc',
+					primary: '#F8F5F2',
 
-					foreground: '#41ead4',
+					secondary: '#2E5EAA',
 
-					accent: '#f71735',
+					accent: '#F45D48',
 
-					neutral: '#fdfffc',
+					neutral: '#232323',
 
 					info: '#2272FF',
 
