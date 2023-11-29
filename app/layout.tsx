@@ -16,7 +16,8 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={`${inter.className} scrollbar scrollbar-w-0 `}>
+			<body
+				className={`${inter.className} scrollbar scrollbar-w-0 scroll-smooth `}>
 				{children}
 			</body>
 		</html>

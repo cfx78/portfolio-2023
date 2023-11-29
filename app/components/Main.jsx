@@ -11,7 +11,7 @@ import {
 import { use, useEffect, useRef, useState } from 'react';
 import Hero from './sections/Hero';
 
-export default function Home() {
+export default function Main() {
 	// const [isMoving, setIsMoving] = useState(useMotionValue(0));
 	// const ref = useRef(null);
 
