@@ -57,6 +57,10 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography'), require('daisyui')],
+	plugins: [
+		require('@tailwindcss/typography'),
+		require('daisyui'),
+		require('tailwind-scrollbar')({ nocompatible: true }),
+	],
 };
 export default config;

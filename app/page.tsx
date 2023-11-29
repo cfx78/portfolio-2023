@@ -1,7 +1,14 @@
 'use client';
 import Navbar from '@/app/components/Navbar';
 import { Ubuntu } from 'next/font/google';
-import { motion } from 'framer-motion';
+import {
+	motion,
+	useScroll,
+	useTransform,
+	AnimatePresence,
+	useMotionValue,
+} from 'framer-motion';
+import { use, useEffect, useRef, useState } from 'react';
 
 const ubuntu = Ubuntu({
 	subsets: ['latin'],
@@ -9,8 +16,23 @@ const ubuntu = Ubuntu({
 });
 
 export default function Home() {
+	// const [isMoving, setIsMoving] = useState(useMotionValue(0));
+	// const ref = useRef(null);
+
+	// const { scrollYProgress } = useScroll({
+	// 	target: ref,
+	// });
+	// const left = useTransform(scrollYProgress, [0, 1], [0, 300]);
+
+	// useEffect(() => {
+	// 	setIsMoving(scrollYProgress);
+
+	// 	console.log(isMoving);
+	// 	console.log(left.get());
+	// }, [scrollYProgress]);
+
 	return (
-		<main className='flex    '>
+		<main className='flex  flex-col h-full   '>
 			<Navbar />
 			<section className=' px-12 flex flex-col justify-center py -space-y-80'>
 				<h1
@@ -26,34 +48,60 @@ export default function Home() {
 						}}
 						transition={{
 							duration: 1,
-							delay: 1,
+							delay: 1.5,
 						}}
 						className='end'>
 						E
 					</motion.span>
 				</h1>
-				<h1
-					className={`${ubuntu.className} -space-x-3 text-[27rem] prose-2xl pl-5  tracking-tighter `}>
-					<span>F</span>
-					<span>R</span>
-					<span>O</span>
-					<motion.span
+
+				<AnimatePresence>
+					<motion.h1
 						initial={{
 							opacity: 0,
+							x: -300,
 						}}
 						animate={{
 							opacity: 1,
+							x: 0,
 						}}
 						transition={{
 							duration: 1,
-							delay: 1.25,
 						}}
-						className='text-secondary end'>
-						N
-					</motion.span>
-					<span>T</span>
-				</h1>
-				<h1
+						className={`${ubuntu.className} -space-x-3 text-[27rem] prose-2xl pl-5  tracking-tighter `}>
+						<span>F</span>
+						<span>R</span>
+						<span>O</span>
+						<motion.span
+							initial={{
+								opacity: 0,
+							}}
+							animate={{
+								opacity: 1,
+							}}
+							transition={{
+								delay: 1,
+								duration: 1,
+							}}
+							className='text-secondary end'>
+							N
+						</motion.span>
+						<span>T</span>
+					</motion.h1>
+				</AnimatePresence>
+
+				<motion.h1
+					initial={{
+						opacity: 0,
+						x: 300,
+					}}
+					animate={{
+						opacity: 1,
+						x: 0,
+					}}
+					transition={{
+						duration: 1,
+					}}
 					className={`${ubuntu.className} -space-x-3 text-[27rem] prose-2xl pl-[50rem] tracking-tighter`}>
 					<motion.span
 						initial={{
@@ -63,8 +111,8 @@ export default function Home() {
 							opacity: 1,
 						}}
 						transition={{
+							delay: 1,
 							duration: 1,
-							delay: 1.5,
 						}}
 						className='text-secondary end'>
 						D
@@ -77,7 +125,10 @@ export default function Home() {
 					<span>P</span>
 					<span>E</span>
 					<span>R</span>
-				</h1>
+				</motion.h1>
+			</section>
+			<section className='min-h-screen flex justify-center items-center'>
+				<h1 className='text-4xl'>Hello</h1>
 			</section>
 		</main>
 	);

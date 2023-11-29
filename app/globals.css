@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	@apply bg-primary w-full h-screen overflow-hidden;
+	@apply bg-primary overflow-x-hidden;
 }
 
 :root {

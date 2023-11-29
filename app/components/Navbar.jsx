@@ -24,7 +24,7 @@ const Navbar = () => {
 	}, [theme]);
 	return (
 		<nav
-			className={`fixed top-0 left-0 bg-primary px-12 flex flex-row w-full items-center prose-2xl  justify-between z-10  ${openSans.className} `}>
+			className={`fixed top-0 left-0  px-12 flex flex-row w-full items-center prose-2xl  justify-between z-10  ${openSans.className} `}>
 			<a href='#'>
 				<h4 className='flex flex-row justify-evenly items-center gap-4  '>
 					<GrCode /> Cortez Foxx
