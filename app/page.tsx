@@ -1,31 +1,21 @@
 'use client';
 import Navbar from '@/app/components/Navbar';
 
-import {
-	motion,
-	useScroll,
-	useTransform,
-	AnimatePresence,
-	useMotionValue,
-} from 'framer-motion';
 import { use, useEffect, useRef, useState } from 'react';
 import Hero from './sections/Hero';
+import Lenis from '@studio-freight/lenis';
 
 export default function Home() {
-	// const [isMoving, setIsMoving] = useState(useMotionValue(0));
-	// const ref = useRef(null);
+	useEffect(() => {
+		const lenis = new Lenis();
 
-	// const { scrollYProgress } = useScroll({
-	// 	target: ref,
-	// });
-	// const left = useTransform(scrollYProgress, [0, 1], [0, 300]);
+		function raf(time: any) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
 
-	// useEffect(() => {
-	// 	setIsMoving(scrollYProgress);
-
-	// 	console.log(isMoving);
-	// 	console.log(left.get());
-	// }, [scrollYProgress]);
+		requestAnimationFrame(raf);
+	}, []);
 
 	return (
 		<main className='flex  flex-col h-full   '>
