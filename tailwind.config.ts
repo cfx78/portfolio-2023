@@ -6,49 +6,12 @@ const config: Config = {
 		'./components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
-	daisyui: {
-		themes: [
-			{
-				dark: {
-					primary: '#232323',
 
-					secondary: '#F45D48',
-
-					accent: '#2E5EAA',
-
-					neutral: '#F8F5F2',
-
-					info: '#2272FF',
-
-					success: '#508484',
-
-					warning: '#FC9E4F',
-
-					error: '#CC2936',
-				},
-				light: {
-					primary: '#F8F5F2',
-
-					secondary: '#2E5EAA',
-
-					accent: '#F45D48',
-
-					neutral: '#232323',
-
-					info: '#2272FF',
-
-					success: '#508484',
-
-					warning: '#FC9E4F',
-
-					error: '#CC2936',
-				},
-			},
-
-			'dark',
-		],
-	},
 	theme: {
+		colors: {
+			primary: '#6d2d2d',
+			secondary: '#f1fef9',
+		},
 		extend: {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -59,7 +22,7 @@ const config: Config = {
 	},
 	plugins: [
 		require('@tailwindcss/typography'),
-		require('daisyui'),
+
 		require('tailwind-scrollbar')({ nocompatible: true }),
 	],
 };
