@@ -24,7 +24,7 @@ const Navbar = () => {
 	}, [theme]);
 	return (
 		<nav
-			className={`fixed top-0 left-0 bg-gradient-to-b from-primary -from-5% via-black via-70% to-90% to-transparent  px-12 flex flex-row w-full items-center prose-2xl text-white shadow-lg shadow-black  justify-between z-10 pb-5  ${openSans.className} `}>
+			className={`fixed top-0 left-0 bg-gradient-to-b from-primary -from-5% via-black via-70% to-90% to-transparent  lg:px-12 flex flex-row w-full items-center lg:prose-2xl text-white shadow-lg shadow-black  justify-between z-10 pb-5  ${openSans.className} `}>
 			<a href='#'>
 				<h4 className='flex flex-row justify-evenly items-center gap-4  '>
 					<GrCode /> Cortez Foxx

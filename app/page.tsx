@@ -18,10 +18,10 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className='flex  flex-col h-full   '>
+		<main className='flex  flex-col h-screen w-screen relative    '>
 			<Navbar />
 			<Hero />
-			<section className='min-h-screen flex justify-center items-center'>
+			<section className='min-h-full flex justify-center items-center'>
 				<h1 className='text-4xl'>Hello</h1>
 			</section>
 		</main>

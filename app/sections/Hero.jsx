@@ -103,16 +103,16 @@ const Hero = () => {
 	}, []);
 
 	return (
-		<section className=' px-12 flex flex-col justify-center py -space-y-80'>
+		<section className='min-h-full px-12 flex flex-col justify-center py-4 -space-y-80'>
 			<h1
 				ref={eRef}
-				className={`${ubuntu.className}  -space-y-96 text-[27rem] prose-2xl pr-[50rem] self-center flex flex-col text-secondary `}>
+				className={`${ubuntu.className}  -space-y-96 text-9xl lg:text-[27rem] lg:prose-2xl pr-[50rem] self-center flex flex-col text-secondary `}>
 				<span className='end  '>E</span>
 			</h1>
 
 			<h1
 				ref={frontRef}
-				className={`${ubuntu.className} -space-x-3 text-[27rem] prose-2xl   tracking-tighter `}>
+				className={`${ubuntu.className} -space-x-3 text-9xl lg:text-[27rem] lg:prose-2xl   tracking-tighter `}>
 				<span>F</span>
 				<span>R</span>
 				<span>O</span>
@@ -122,7 +122,7 @@ const Hero = () => {
 
 			<h1
 				ref={devRef}
-				className={`${ubuntu.className} -space-x-3 text-[27rem] prose-2xl pl-[48.5rem] tracking-tighter`}>
+				className={`${ubuntu.className} -space-x-3 text-9xl lg:text-[27rem] lg:prose-2xl pl-[48.5rem] tracking-tighter`}>
 				<span className='text-secondary end'>D</span>
 				<span>E</span>
 				<span>V</span>
