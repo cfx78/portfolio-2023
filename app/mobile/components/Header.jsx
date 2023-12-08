@@ -24,6 +24,7 @@ const Header = () => {
 					x: 0,
 					ease: 'power4.out',
 					duration: 1,
+					delay: 1.25,
 				},
 			);
 		}, ref);
