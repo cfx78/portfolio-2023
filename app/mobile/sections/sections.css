@@ -14,3 +14,11 @@ section {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+h1 {
+	font-kerning: none;
+}
+
+.char:hover {
+	color: chocolate;
+}

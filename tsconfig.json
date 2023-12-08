@@ -27,8 +27,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"app/components/Navbar.jsx",
-		"app/sections/Hero.jsx"
+		"app/mobile/components/Navbar.jsx",
+		"app/mobile/sections/Hero.jsx"
 	],
 	"exclude": ["node_modules"]
 }

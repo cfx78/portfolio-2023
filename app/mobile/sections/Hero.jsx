@@ -3,6 +3,7 @@ import { Aboreto } from 'next/font/google';
 import './sections.css';
 import gsap from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
+import SplitType from 'split-type';
 
 const aboreto = Aboreto({
 	subsets: ['latin'],
@@ -10,33 +11,31 @@ const aboreto = Aboreto({
 });
 
 const Hero = () => {
-	const heroRef = useRef(null);
-
+	const heroRef = useRef();
 	useLayoutEffect(() => {
+		const front = new SplitType('#front');
+		const dev = new SplitType('#dev');
+
 		let ctx = gsap.context(() => {
-			gsap.fromTo(
-				'h1',
-				{
-					opacity: 0,
-					y: 100,
-				},
-				{
-					opacity: 1,
-					y: 0,
-					stagger: 0.5,
-					ease: 'power4.out',
-					duration: 1,
-				},
-			);
+			gsap.from('.char', {
+				opacity: 0,
+				y: 100,
+				stagger: 0.2,
+				duration: 1,
+				ease: 'sine.inOut',
+			});
 		}, heroRef);
+
 		return () => ctx.revert();
 	}, []);
 
 	return (
 		<section ref={heroRef}>
-			<div className={`${aboreto.className} my-auto pb-32 pl-7 text-5xl`}>
-				<h1>FRONTEND</h1>
-				<h1 className=' pl-5'>DEVELOPER</h1>
+			<div className={`${aboreto.className} my-auto pb-36 pl-7 text-5xl`}>
+				<h1 id='front'>FRONTEND</h1>
+				<h1 id='dev' className='pl-5'>
+					DEVELOPER
+				</h1>
 			</div>
 		</section>
 	);
