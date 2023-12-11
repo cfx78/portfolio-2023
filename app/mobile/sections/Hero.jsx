@@ -1,11 +1,14 @@
 'use client';
 import { Aboreto, Gotu } from 'next/font/google';
 import './sections.css';
-import gsap from 'gsap';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
 import SplitType from 'split-type';
 import { LiaArrowDownSolid } from 'react-icons/lia';
 import Header from '../components/Header';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const aboreto = Aboreto({
 	subsets: ['latin'],
@@ -56,19 +59,17 @@ const Hero = () => {
 					ease: 'sine.inOut',
 				},
 			);
-
-			// tl.add(() => {
-			// 	scrollTl.from('.arrow', {
-			// 		opacity: 0,
-			// 	});
-			// 	scrollTl.to('.arrow', {
-			// 		y: 10,
-			// 		duration: 0.5,
-			// 		repeat: -1,
-			// 		yoyo: true,
-			// 		ease: 'sine.inOut',
-			// 	});
-			// });
+			tl.to('.front', {
+				x: 1000,
+				opacity: 0,
+				scrollTrigger: {
+					trigger: '.front',
+					start: 'top center',
+					end: 'bottom top',
+					scrub: true,
+					markers: true,
+				},
+			});
 		}, heroRef);
 
 		return () => ctx.revert();
@@ -77,8 +78,11 @@ const Hero = () => {
 	return (
 		<section className='section bg-primary text-secondary' ref={heroRef}>
 			<Header />
-			<div className={`${aboreto.className} my-auto  pl-7 text-5xl`}>
-				<h1 id='front'>FRONTEND</h1>
+			<div
+				className={`${aboreto.className} my-auto pb-24  pl-7 text-5xl`}>
+				<h1 id='front' className='front'>
+					FRONTEND
+				</h1>
 				<h1 id='dev' className='pl-5'>
 					DEVELOPER
 				</h1>

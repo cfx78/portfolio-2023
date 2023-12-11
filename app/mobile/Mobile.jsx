@@ -1,25 +1,25 @@
 'use client';
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import Hero from './sections/Hero';
 import gsap from 'gsap';
+import About from './sections/About';
+import Lenis from '@studio-freight/lenis';
 
 const Mobile = () => {
-	// const ref = useRef(null);
-	// useLayoutEffect(() => {
-	// 	gsap.fromTo(
-	// 		ref.current,
-	// 		{ opacity: 0, transform: 'translateY(100%)' },
-	// 		{
-	// 			opacity: 1,
-	// 			duration: 2,
-	// 			ease: 'power4.out',
-	// 			transform: 'translateY(0%)',
-	// 		},
-	// 	);
-	// }, []);
+	useEffect(() => {
+		const lenis = new Lenis();
+
+		function raf(time) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+
+		requestAnimationFrame(raf);
+	}, []);
 	return (
 		<main className=''>
 			<Hero />
+			<About />
 		</main>
 	);
 };

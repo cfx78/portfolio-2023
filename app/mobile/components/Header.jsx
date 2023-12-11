@@ -34,8 +34,8 @@ const Header = () => {
 	return (
 		<header
 			ref={ref}
-			className={`${sacramento.className} top-0 left-0 p-6 flex items-center `}>
-			<h2 className='text-3xl '>Cortez Foxx</h2>
+			className={`${sacramento.className} top-0 left-0 p-7 flex items-center `}>
+			<h2 className='text-xl '>Cortez Foxx</h2>
 		</header>
 	);
 };
